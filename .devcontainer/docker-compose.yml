@@ -1,0 +1,48 @@
+services:
+  php-apache:
+    image: php:apache
+    container_name: php-apache
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "80:80"
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    networks:
+      - daw-network
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dawdb
+      MYSQL_PASSWORD: daw
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - daw-network
+
+  phpmyadmin:
+    image: phpmyadmin:apache
+    depends_on:
+      - mysql
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: daw
+    ports:
+      - "8080:80"
+    networks:
+      - daw-network
+
+networks:
+  daw-network:
+    driver: bridge
+  
+volumes:
+  mysql:
