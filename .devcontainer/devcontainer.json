@@ -10,7 +10,8 @@
         "ms-python.python",
         "bmewburn.vscode-intelephense-client",
         "ecmel.vscode-html-css",
-        "vscjava.vscode-java-pack"
+        "vscjava.vscode-java-pack",
+        "xabikos.JavaScriptSnippets"
     ],
     "postCreateCommand": "apt-get update && apt-get install -y default-jre python3 python3-pip git-all",
     "remoteUser": "root",
