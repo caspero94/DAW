@@ -13,8 +13,7 @@
         "vscjava.vscode-java-pack",
         "xabikos.JavaScriptSnippets"
     ],
-    "postCreateCommand": "/bin/bash -c 'if [ ! -d /var/www/html/.git ]; then git clone https://github.com/caspero94/DAW.git /var/www/html; fi'",
-    "postStartCommand": "/bin/bash -c 'cd /var/www/html && git stash && git pull --rebase origin main || git reset --hard HEAD && git stash pop'",
+    "postStartCommand": "/bin/bash -c 'if [ ! -d /var/www/html/.git ]; then git clone https://github.com/caspero94/DAW.git /var/www/html; else cd /var/www/html && git stash && git pull --rebase origin main || git reset --hard HEAD && git stash pop; fi'",
     "remoteUser": "root",
     "shutdownAction": "stopCompose"
 }
