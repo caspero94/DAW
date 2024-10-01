@@ -33,5 +33,4 @@ Ajustes:
   - user: root - password: root
 
 Autor: pedro pereira
-
-:D
+-_-
