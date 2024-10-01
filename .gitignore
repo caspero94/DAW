@@ -13,6 +13,3 @@
 !.devcontainer/**
 !._recursos/
 !._recursos/**
-
-!.python/
-!.java/
