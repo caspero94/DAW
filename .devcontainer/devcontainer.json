@@ -13,7 +13,6 @@
         "vscjava.vscode-java-pack",
         "xabikos.JavaScriptSnippets"
     ],
-    "postCreateCommand": "/bin/bash -c 'if [ ! -d /workspace/.git ]; then git clone https://github.com/caspero94/DAW.git /workspace; else cd /workspace && git pull origin main; fi'",
     "remoteUser": "root",
     "shutdownAction": "stopCompose"
 }
