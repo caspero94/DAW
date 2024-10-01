@@ -19,7 +19,7 @@ services:
       if [ ! -d '/var/www/html/.git' ]; then 
         git clone https://github.com/caspero94/DAW.git /var/www/html; 
       else 
-        cd /var/www/html && git pull origin main; 
+        cd /var/www/html && git pull --rebase origin main; 
       fi"
       
   mysql:
