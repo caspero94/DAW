@@ -34,4 +34,4 @@ Ajustes:
 
 Autor: pedro pereira
 
-:D:D
+CAMBIO :D
