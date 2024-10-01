@@ -13,7 +13,7 @@
         "vscjava.vscode-java-pack",
         "xabikos.JavaScriptSnippets"
     ],
-    "postStartCommand": "/bin/sh /var/www/html/init_repo.sh",
+    "postStartCommand": "/bin/sh /var/www/html/.devcontainer/init_repo.sh",
     "remoteUser": "root",
     "shutdownAction": "stopCompose"
 }
