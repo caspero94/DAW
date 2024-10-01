@@ -15,6 +15,5 @@
     ],
     "postStartCommand": "/bin/sh /var/www/html/.devcontainer/init_repo.sh",
     "remoteUser": "root",
-    "shutdownAction": "stopCompose",
     "shutdownAction": "stopCompose"
 }
