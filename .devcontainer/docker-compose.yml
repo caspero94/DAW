@@ -3,7 +3,7 @@ services:
     image: php:apache
     container_name: php-apache
     volumes:
-      - ./src:/var/www/html
+      - ../:/var/www/html
     ports:
       - "80:80"
     environment:
