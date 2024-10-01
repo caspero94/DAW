@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#!/bin/bash TEST
 REPO_URL="https://github.com/caspero94/DAW.git"
 TEMP_DIR="temp_repo"
 
