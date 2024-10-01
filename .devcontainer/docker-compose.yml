@@ -15,12 +15,7 @@ services:
       apt-get install -y git libpng-dev libjpeg-dev default-jre python3 python3-pip && 
       docker-php-ext-install mysqli && 
       docker-php-ext-enable mysqli && 
-      apache2-foreground && 
-      if [ ! -d '/var/www/html/.git' ]; then 
-        git clone https://github.com/caspero94/DAW.git /var/www/html; 
-      else 
-        cd /var/www/html && git pull --rebase origin main; 
-      fi"
+      apache2-foreground"
       
   mysql:
     image: mysql
