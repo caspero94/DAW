@@ -1,33 +1,35 @@
-ENTORNO DE DESARROLLO LISTO PARA REALIZAR LAS CLASES DEL 1º CURSO DE DAW/DAM
+Entorno de desarrollo listo para realizar las clases del 1º curso de daw/dam
 
-CONTENEDOR DEVCONTAINER - DOCKER COMPOSE
+Contenedor devcontainer - docker compose
 
-REQUISITOS PREVIOS:
+Requisitos previos:
 
-- DESCARGAR E INSTALAR:
+- Si tenéis instalado mysql o xampp en vuestro pc, debéis desinstalarlo para evitar conflictos con el puerto 3306 o detener el servicio manualmente, también podéis cambiar el puerto en el archivo docker-compose.yml en el servicio mysql:  cambiar de  - "3306:3306"  por  - "3300:3306"
 
-  - [VISUAL STUDIO CODE](https://visualstudio.microsoft.com/es/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
-  - [EXTENSION DEVCONTAINER PARA VSCODE](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-  - [DOCKER](https://docs.docker.com/get-started/get-docker/)
+- Descargar e instalar:
 
-QUE INCLUYE:
+  - [visual studio code](https://visualstudio.microsoft.com/es/thank-you-downloading-visual-studio/?sku=community&channel=release&version=vs2022&source=vslandingpage&cid=2030&passive=false)
+  - [extension devcontainer para vscode](https://marketplace.visualstudio.com/items?itemname=ms-vscode-remote.remote-containers)
+  - [docker](https://docs.docker.com/get-started/get-docker/)
 
-- SOPORTE: JAVA, PYTHON, MYSQL, HTML, CSS, JS, PHP, PHPMYADMIN, APACHE, GIT (AUTOCOMPLETADO, EJEECUCCIÓN, DEPURACIÓN, ETC)
-- VISUAL STUDIO CODE CONFIGURADO CON EXTENSIONES NECESARIAS
-- EXPLORADOR WEB DE PROJECTOS PHP EN LOCALHOST
+Que incluye:
 
-AJUSTES:
+- soporte: java, python, mysql, html, css, js, php, phpmyadmin, apache, git (autocompletado, ejeecucción, depuración, etc)
+- visual studio code configurado con extensiones necesarias
+- explorador web de projectos php en localhost
 
-  - [EXPLORADOR PHP [PUERTO 80]](http://localhost/)
-  - [PHPMYADMIN [PUERTO 8080]](http://localhost:8080/) 
-  - MYSQL [PUERTO 3306]
-  - USER: ROOT - PASSWORD: ROOT
+- instalación:
 
-- INSTALACIÓN:
+  - 1º descargar carpeta daw o [realizar git clone ](https://github.com/caspero94/daw)
+  - 2º abrir carpeta daw con vscode, vscode detecta el devcoontainer y preguntara si desea abrir el proyecto en un contenedor, aceptas o pulsa f1 y escriben reopen in container y enter, esperamos a que finalice la instalación y configuración de los contenedores y pulsamos enter.
+  - 3º entra en [phpmyadmin [puerto 8080]](http://localhost:8080/) con user y pass "root", en la parte inferior informa que esta deshabilitado algunas funciones, dale clic, le dirá que necesita crear base de datos phpmyadmin, clic en crear, y la configuración esta finalizada.
+  - 4º a programar!
 
-  - 1º DESCARGAR CARPETA DAW O [REALIZAR GIT CLONE ](https://github.com/caspero94/DAW)
-  - 2º ABRIR CARPETA DAW CON VSCODE, VSCODE DETECTA EL DEVCOONTAINER Y PREGUNTARA SI DESEA ABRIR EL PROJECTO EN UN CONTENEDOR, ACEPTAS O PULSA F1 Y ESCRIBEN REOPEN IN CONTAINER Y ENTER, ESPERAMOS A QUE FINALICE LA INSTALACION Y CONFIGURACIÓN DE LOS CONTENEDORES Y PULSAMOS ENTER.
-  - 3º ACEDE A [PHPMYADMIN [PUERTO 8080]](http://localhost:8080/), EN LA PARTE INFERIOR INFORMA QUE ESTA DESHABILITADO ALGUNAS FUNCIONES, DALE CLICK, LE DIRA QUE NECESITA CREAR BASE DE DATOS PHPMYADMIN, CLICK EN CREAR, Y LA CONFIGURACIÓN ESTA FINALIZADA.
-  - 4º A PROGRAMAR!
+Ajustes:
 
-AUTOR: PEDRO PEREIRA
+  - [explorador php [puerto 80]](http://localhost/)
+  - [phpmyadmin [puerto 8080]](http://localhost:8080/) 
+  - mysql [puerto 3306]
+  - user: root - password: root
+
+Autor: pedro pereira
