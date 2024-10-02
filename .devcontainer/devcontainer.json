@@ -1,6 +1,6 @@
 {   
     "name": "DAW/DAM DEV",
-    "secrets": {"VERSION":{"description": "0.1.2"}},
+    "secrets": {"VERSION":{"description": "0.1.3"}},
     "dockerComposeFile": "docker-compose.yml",
     "service": "php-apache",
     "workspaceFolder": "/var/www/html",
@@ -12,7 +12,8 @@
         "bmewburn.vscode-intelephense-client",
         "ecmel.vscode-html-css",
         "vscjava.vscode-java-pack",
-        "xabikos.JavaScriptSnippets"
+        "xabikos.JavaScriptSnippets",
+        "ms-vscode.live-server"
     ],
     "remoteUser": "root",
     "shutdownAction": "stopCompose"
