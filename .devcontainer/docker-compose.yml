@@ -17,6 +17,7 @@ services:
       docker-php-ext-enable mysqli && 
       git clone https://github.com/caspero94/DAW.git /var/www/temp_repo &&
       rm -rf /var/www/temp_repo/.git &&
+      rm -rf /var/www/html/._recursos &&
       cp -r /var/www/temp_repo/. /var/www/html/ &&
       rm -rf /var/www/temp_repo && 
       rm -f /var/www/html/.gitignore &&
