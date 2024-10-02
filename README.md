@@ -1,4 +1,4 @@
-# Entorno de Desarrollo para el Primer Curso de DAW/DAM
+# Entorno de Desarrollo para grado superior de DAW/DAM
 
 Este repositorio proporciona un entorno de desarrollo completo para las clases de primer curso de Desarrollo de Aplicaciones Web (DAW) y Desarrollo de Aplicaciones Multiplataforma (DAM). Utiliza DevContainer y Docker Compose para garantizar un entorno estandarizado y fácil de desplegar.
 
@@ -11,7 +11,8 @@ Este repositorio proporciona un entorno de desarrollo completo para las clases d
   - PHP (con soporte para phpMyAdmin)
   - HTML, CSS, JavaScript
   - Apache
-  - Git (con autocompletado, ejecución, depuración, etc.)
+  - Git
+  - Soporte para autocompletado, ejecución, depuración.
   
 - **Integración con Visual Studio Code:**
   - Configuración automática con las extensiones necesarias para desarrollo web y de software.
