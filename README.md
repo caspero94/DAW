@@ -34,7 +34,7 @@ Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
      ```
 
 2. **Descargar e instalar las siguientes herramientas:**
-   - [Visual Studio Code](https://visualstudio.microsoft.com/es/thank-you-downloading-visual-studio/?sku=community&channel=release&version=vs2022&source=vslandingpage&cid=2030&passive=false)
+   - [Visual Studio Code](https://code.visualstudio.com/download)
    - [Extensión DevContainer para VSCode](https://marketplace.visualstudio.com/items?itemname=ms-vscode-remote.remote-containers)
    - [Docker](https://docs.docker.com/get-started/get-docker/)
 
