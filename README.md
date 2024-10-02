@@ -35,3 +35,4 @@ Ajustes:
 Autor: pedro pereira
 
 CAMBIO :D
+ERIK Y JORDI, TESTER
