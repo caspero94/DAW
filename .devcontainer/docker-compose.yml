@@ -18,7 +18,8 @@ services:
       git clone https://github.com/caspero94/DAW.git /var/www/temp_repo &&
       rm -rf /var/www/temp_repo/.git &&
       cp -r /var/www/temp_repo/. /var/www/html/ &&
-      rm -rf /var/www/temp_repo &&
+      rm -rf /var/www/temp_repo && 
+      rm -f /var/www/html/.gitignore &&
       apache2-foreground"
   
   mysql:
