@@ -20,7 +20,6 @@ services:
       cp -r /var/www/temp_repo/. /var/www/html/ &&
       rm -rf /var/www/temp_repo && 
       rm -f /var/www/html/.gitignore &&
-      rm -f /var/www/html/README.md &&
       apache2-foreground"
   
   mysql:
