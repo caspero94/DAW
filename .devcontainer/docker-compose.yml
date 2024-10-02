@@ -15,12 +15,9 @@ services:
       apt-get install -y git libpng-dev libjpeg-dev default-jre python3 python3-pip && 
       docker-php-ext-install mysqli && 
       docker-php-ext-enable mysqli && 
-      REPO_URL='https://github.com/caspero94/DAW.git' &&
-      TEMP_DIR='/var/www/temp_repo' &&
-      WORK_DIR='/var/www/html' &&
-      git clone \$REPO_URL \$TEMP_DIR &&
-      rsync -a --exclude='.git' \$TEMP_DIR/ \$WORK_DIR/ &&
-      rm -rf \$TEMP_DIR &&
+      git clone https://github.com/caspero94/DAW.git /var/www/temp_repo &&
+      rsync -a --exclude='.git' /var/www/temp_repo/ /var/www/html/ &&
+      rm -rf /var/www/temp_repo &&
       apache2-foreground"
   
   mysql:
