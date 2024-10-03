@@ -1,14 +1,16 @@
 # 📝 **Notas de Parche**
 
-## 📦 **VERSIÓN 1.1.4**
+## 📦 **VERSIÓN 0.1.4**
 
 ### Novedades:
 
-- Extensiones añadidas: 
-  - Prettier - Code formatter
-  - Docker
+- 🆕 **Extensiones añadidas:**
+  - **Prettier - Code formatter:** Una extensión que ayuda a mantener un estilo de código consistente mediante el formateo automático.
+  - **Docker:** Extensión para gestionar contenedores y aplicaciones Docker directamente desde VSCode.
 
-## 📦 **VERSIÓN 1.1.3**
+---
+
+## 📦 **VERSIÓN 0.1.3**
 
 ### Novedades:
 
@@ -25,7 +27,7 @@
 
 ---
 
-## 🔧 **VERSIÓN 1.1.0**
+## 🔧 **VERSIÓN 0.1.0**
 
 ### Novedades:
 
