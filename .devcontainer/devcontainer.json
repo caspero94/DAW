@@ -1,6 +1,6 @@
 {   
     "name": "DAW/DAM DEV",
-    "secrets": {"VERSION":{"description": "0.1.5"}},
+    "secrets": {"VERSION":{"description": "0.1.5.1"}},
     "dockerComposeFile": "docker-compose.yml",
     "service": "php-apache",
     "workspaceFolder": "/var/www/html",
