@@ -7,6 +7,7 @@
 - 🆕 **Extensiones añadidas:**
   - **Prettier - Code formatter:** Una extensión que ayuda a mantener un estilo de código consistente mediante el formateo automático.
   - **Docker:** Extensión para gestionar contenedores y aplicaciones Docker directamente desde VSCode.
+- 🔧 **Configuración persistente de Git:** Se ha añadido un archivo de configuración para Git en la carpeta .devcontainer del proyecto. Este archivo permite establecer y personalizar user.name y user.email, asegurando que estas configuraciones se conserven cada vez que se reconstruya el contenedor. Para modificar estos valores, simplemente editen el archivo .gitconfig dentro de la carpeta .devcontainer con la información deseada.
 
 ---
 
