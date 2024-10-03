@@ -15,8 +15,13 @@ services:
       apt-get install -y git libpng-dev libjpeg-dev default-jre python3 python3-pip && 
       docker-php-ext-install mysqli && 
       docker-php-ext-enable mysqli && 
-      git config --global user.name 'John Doe' && 
-      git config --global user.email 'johndoe@example.com' && 
+      if [ ! -f /var/www/html/.devcontainer/.gitconfig ]; then \
+          echo 'No se encontró .gitconfig. Creando uno nuevo.'; \
+          echo -e '[user]\n\tname = nombreusuarioengithub\n\temail = tucorreodegithub@aqui.com' > /var/www/html/.devcontainer/.gitconfig; \
+      fi && \
+      echo 'Configuración de Git encontrada. Usando configuración existente.'; \
+      git config --global user.name \"\$(grep 'name =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
+      git config --global user.email \"\$(grep 'email =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
       git clone https://github.com/caspero94/DAW.git /var/www/temp_repo &&
       rm -rf /var/www/temp_repo/.git &&
       rm -rf /var/www/html/._recursos &&
