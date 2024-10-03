@@ -1,5 +1,13 @@
 # 📝 **Notas de Parche**
 
+## 📦 **VERSIÓN 1.1.4**
+
+### Novedades:
+
+- Extensiones añadidas: 
+  - Prettier - Code formatter
+  - Docker
+
 ## 📦 **VERSIÓN 1.1.3**
 
 ### Novedades:
