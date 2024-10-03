@@ -18,8 +18,10 @@ services:
       docker-php-ext-install mysqli && 
       docker-php-ext-enable mysqli && 
       if [ ! -f /var/www/html/.devcontainer/.gitconfig ]; then \
-          echo 'No se encontró .gitconfig. Creando uno nuevo.'; \
-          echo -e '[user]\n\tname = nombreusuarioengithub\n\temail = tucorreodegithub@aqui.com' > /var/www/html/.devcontainer/.gitconfig; \
+      echo 'No se encontró .gitconfig. Creando uno nuevo.'; \
+      echo '[user]' > /var/www/html/.devcontainer/.gitconfig; \
+      echo '    name = nombreusuarioengithub' >> /var/www/html/.devcontainer/.gitconfig; \
+      echo '    email = tucorreodegithub@aqui.com' >> /var/www/html/.devcontainer/.gitconfig; \
       fi && \
       echo 'Configuración de Git encontrada. Usando configuración existente.'; \
       git config --global user.name \"\$(grep 'name =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
