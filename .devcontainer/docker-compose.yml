@@ -11,6 +11,8 @@ services:
     networks:
       - daw-network
     command: /bin/bash -c "
+      echo 'Esperando 10 segundos para que Docker se estabilice...'; \
+      sleep 10 && \
       apt-get update && 
       apt-get install -y git libpng-dev libjpeg-dev default-jre python3 python3-pip && 
       docker-php-ext-install mysqli && 
