@@ -15,7 +15,6 @@
         "xabikos.JavaScriptSnippets",
         "ms-vscode.live-server",
         "ms-azuretools.vscode-docker",
-        "esbenp.prettier-vscode"
     ],
     "remoteUser": "root",
     "shutdownAction": "stopCompose"
