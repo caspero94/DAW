@@ -24,7 +24,7 @@ services:
       echo 'Configuración de Git encontrada. Usando configuración existente.'; \
       git config --global user.name \"\$(grep 'name =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
       git config --global user.email \"\$(grep 'email =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
-      git clone https://github.com/caspero94/DAW.git /var/www/temp_repo &&
+      git clone --branch 0.1.4 --depth 1 https://github.com/caspero94/DAW.git /var/www/temp_repo &&
       rm -rf /var/www/temp_repo/.git &&
       rm -rf /var/www/html/._recursos &&
       rm -rf /var/www/html/Biblioteca && 
