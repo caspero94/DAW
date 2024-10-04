@@ -11,6 +11,8 @@ services:
     networks:
       - daw-network
     command: /bin/bash -c "
+      echo 'Esperando 10 segundos para que Docker se estabilice...'; \
+      sleep 10 && \
       apt-get update && 
       apt-get install -y git libpng-dev libjpeg-dev default-jre python3 python3-pip && 
       docker-php-ext-install mysqli && 
@@ -24,16 +26,12 @@ services:
       echo 'Configuración de Git encontrada. Usando configuración existente.'; \
       git config --global user.name \"\$(grep 'name =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
       git config --global user.email \"\$(grep 'email =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
-      git clone --branch 0.1.4 --depth 1 https://github.com/caspero94/DAW.git /var/www/temp_repo &&
+      git clone https://github.com/caspero94/DAW.git /var/www/temp_repo &&
       rm -rf /var/www/temp_repo/.git &&
       rm -rf /var/www/html/._recursos &&
-      rm -rf /var/www/html/Biblioteca && 
       cp -r /var/www/temp_repo/. /var/www/html/ &&
       rm -rf /var/www/temp_repo && 
       rm -f /var/www/html/.gitignore &&
-      git clone https://github.com/caspero94/BIBLIOTECA.git /var/www/temp_repo &&
-      rm -rf /var/www/temp_repo/.git &&
-      cp -r /var/www/temp_repo/. /var/www/html/Biblioteca &&
       apache2-foreground"
   
   mysql:
