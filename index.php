@@ -112,7 +112,7 @@ function searchFiles($query, $dir) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAW / DAM Explorer</title>
+    <title>DAW / DAM</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <style>
         :root {
@@ -120,8 +120,8 @@ function searchFiles($query, $dir) {
             --text-color: #333333;
             --hover-color: #f0f0f0;
             --border-color: #e0e0e0;
-            --sidebar-width: 360px;
-            --sidebar-collapsed-width: 60px;
+            --sidebar-width: 30rem;
+            --sidebar-collapsed-width: 80px;
             --accent-color: #4a90e2;
             --secondary-color: #50e3c2;
             --headbar-height: 60px;
@@ -158,7 +158,7 @@ function searchFiles($query, $dir) {
             height: var(--headbar-height);
             background-color: var(--bg-color);
             border-bottom: 1px solid var(--border-color);
-            padding: 0 20px;
+            padding: 0 40px;
         }
         
         #main-container {
@@ -171,7 +171,7 @@ function searchFiles($query, $dir) {
             height: 100%;
             overflow-y: auto;
             border-right: 1px solid var(--border-color);
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
             transition: width 0.3s, transform 0.3s;
             background-color: var(--bg-color);
@@ -255,16 +255,16 @@ function searchFiles($query, $dir) {
             flex-grow: 1;
             border: none;
             background-color: #ffffff;
-            height: 90vh;
+            height: 95vh;
         }
         
         .tree, .tree ul {
             list-style-type: none;
-            padding-left: 20px;
+            padding-left: 10px;
         }
         
         .tree li {
-            padding: 8px 0;
+            padding: 6px 0;
             cursor: pointer;
             transition: background-color 0.2s, transform 0.2s;
             position: relative;
@@ -302,7 +302,7 @@ function searchFiles($query, $dir) {
         #toolbar {
             display: flex;
             justify-content: center;
-            padding: 20px 0;
+            padding: 10px 0px 10px 0px;
             background-color: var(--bg-color);
             border-bottom: 1px solid var(--border-color);
         }
@@ -310,14 +310,14 @@ function searchFiles($query, $dir) {
         #search-container {
             position: relative;
             width: 100%;
-            max-width: 320px;
+            max-width: 600px;
         }
         
         #search-bar {
             width: 100%;
-            padding: 12px 15px;
+            padding: 8px 0px;
             border: 2px solid var(--border-color);
-            border-radius: 25px;
+            border-radius: 10px;
             background-color: var(--bg-color);
             color: var(--text-color);
             transition: box-shadow 0.3s, border-color 0.3s;
@@ -333,7 +333,7 @@ function searchFiles($query, $dir) {
         #home-link, #db-link {
             display: flex;
             align-items: center;
-            padding: 15px 10px;
+            padding: 10px 10px;
             text-decoration: none;
             color: var(--text-color);
             border-bottom: 1px solid var(--border-color);
@@ -454,21 +454,22 @@ function searchFiles($query, $dir) {
         
         #search-results {
             position: absolute;
+            width: 98%;
             top: 100%;
             left: 0;
             right: 0;
             background-color: var(--bg-color);
             border: 1px solid var(--border-color);
             border-top: none;
-            max-height: 300px;
+            max-height: 500px;
             overflow-y: auto;
             z-index: 1000;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
         
         #search-results .result-item {
-            padding: 12px 15px;
+            padding: 10px 12px;
             cursor: pointer;
             transition: background-color 0.2s;
         }
