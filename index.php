@@ -522,8 +522,8 @@ function searchFiles($query, $dir) {
     </div>
     <div id="main-container">
         <div id="sidebar">
-            <a href="/" id="home-link"><span class="icon">🏠</span><span class="text">Home</span></a>
-            <a href="http://localhost:8080" id="db-link" target="_blank"><span class="icon">🗄️</span><span class="text">Database</span></a>
+            <a href="/" id="home-link"><span class="icon">🏠</span><span class="text">INICIO</span></a>
+            <a href="http://localhost:8080" id="db-link" target="_blank"><span class="icon">🗄️</span><span class="text">BASE DE DATOS</span></a>
             <div id="toolbar">
                 <div id="search-container">
                     <input type="text" id="search-bar" placeholder="Buscar archivos..." aria-label="Search files">
