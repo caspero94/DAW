@@ -17,6 +17,5 @@
       "ms-vscode.live-server"
     ],
     "forwardPorts": [80, 3306, 8080],
-    "remoteUser": "vscode",
-    "postStartCommand": "git config --global --add safe.directory /workspace"
+    "remoteUser": "root"
   }

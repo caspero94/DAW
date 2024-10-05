@@ -61,7 +61,8 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb
+      MYSQL_DATABASE: dawdb
+      MYSQL_PASSWORD: root
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
@@ -73,6 +74,7 @@ services:
       - "8080:80"
     environment:
       PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
     depends_on:
       - mysql
     networks:
