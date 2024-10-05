@@ -1,73 +1,85 @@
 services:
-  php-apache:
-    image: php:apache
-    container_name: php-apache
+  devcontainer:
+    image: mcr.microsoft.com/vscode/devcontainers/java:11
     volumes:
-      - ../:/var/www/html
+      - ..:/workspace:cached
+      - ./.gitconfig:/home/vscode/.gitconfig:cached
+    command: |
+      bash -c "
+        # Eliminar antiguos elementos
+        rm -rf /workspace/._recursos
+
+        # Clonar el primer repositorio
+        git clone https://github.com/caspero94/DAW.git /tmp/DAW
+        rm -rf /tmp/DAW/.git
+        cp -r /tmp/DAW/. /workspace
+        rm -rf /tmp/DAW
+
+        # Clonar el segundo repositorio
+        git clone https://github.com/caspero94/BIBLIOTECA.git /tmp/BIBLIOTECA
+        mkdir -p /workspace/Biblioteca
+        cp -r /tmp/BIBLIOTECA/. /workspace/Biblioteca
+        rm -rf /tmp/BIBLIOTECA
+
+        # Configurar git
+        if [ -f /home/vscode/.gitconfig ]; then
+          git config --global user.name \"$(git config --global user.name)\"
+          git config --global user.email \"$(git config --global user.email)\"
+        fi
+
+        # Mantener el contenedor en ejecución
+        sleep infinity
+      "
+    environment:
+      - JAVA_HOME=/usr/local/openjdk-11
+    networks:
+      - devnetwork
+
+  python:
+    image: python:3.9
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    networks:
+      - devnetwork
+
+  php:
+    image: php:8.0-apache
+    volumes:
+      - ..:/var/www/html:cached
     ports:
       - "80:80"
-    environment:
-      - APACHE_DOCUMENT_ROOT=/var/www/html
+    command: |
+      bash -c "
+        docker-php-ext-install mysqli
+        apache2-foreground
+      "
     networks:
-      - daw-network
-    command: /bin/bash -c "
-      echo 'Esperando 10 segundos para que Docker se estabilice...'; \
-      sleep 10 && \
-      apt-get update && 
-      apt-get install -y git libpng-dev libjpeg-dev default-jre python3 python3-pip && 
-      docker-php-ext-install mysqli && 
-      docker-php-ext-enable mysqli && 
-      if [ ! -f /var/www/html/.devcontainer/.gitconfig ]; then \
-      echo 'No se encontró .gitconfig. Creando uno nuevo.'; \
-      echo '[user]' > /var/www/html/.devcontainer/.gitconfig; \
-      echo '    name = nombreusuarioengithub' >> /var/www/html/.devcontainer/.gitconfig; \
-      echo '    email = tucorreodegithub@aqui.com' >> /var/www/html/.devcontainer/.gitconfig; \
-      fi && \
-      echo 'Configuración de Git encontrada. Usando configuración existente.'; \
-      git config --global user.name \"\$(grep 'name =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
-      git config --global user.email \"\$(grep 'email =' /var/www/html/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\"; \
-      git clone https://github.com/caspero94/DAW.git /var/www/temp_repo &&
-      rm -rf /var/www/temp_repo/.git &&
-      rm -rf /var/www/html/._recursos &&
-      cp -r /var/www/temp_repo/. /var/www/html/ &&
-      rm -rf /var/www/temp_repo && 
-      rm -f /var/www/html/.gitignore &&
-      apache2-foreground"
-  
+      - devnetwork
+
   mysql:
-    image: mysql
-    container_name: mysql
-    restart: always
-    ports:
-      - "3306:3306"
+    image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: dawdb
-      MYSQL_PASSWORD: daw
+      MYSQL_DATABASE: mydb
     volumes:
-      - mysql:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
     networks:
-      - daw-network
+      - devnetwork
 
   phpmyadmin:
-    image: phpmyadmin:apache
-    depends_on:
-      - mysql
-      - php-apache
-    container_name: phpmyadmin
-    restart: always
-    environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: daw
-      UPLOAD_LIMIT: 64M
+    image: phpmyadmin/phpmyadmin
     ports:
       - "8080:80"
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
     networks:
-      - daw-network
+      - devnetwork
 
 networks:
-  daw-network:
-    driver: bridge
-  
+  devnetwork:
+
 volumes:
-  mysql:
+  mysql-data:
