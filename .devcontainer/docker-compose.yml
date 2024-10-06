@@ -1,6 +1,7 @@
 services:
-  devcontainer:
+  java:
     image: mcr.microsoft.com/vscode/devcontainers/java:11
+    container_name: Java
     volumes:
       - ..:/workspace:cached
       - ./.gitconfig:/home/vscode/.gitconfig:cached
@@ -37,6 +38,7 @@ services:
 
   python:
     image: python:3.9
+    container_name: Python
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
@@ -45,6 +47,7 @@ services:
 
   php:
     image: php:8.0-apache
+    container_name: PHP
     volumes:
       - ..:/var/www/html:cached
     ports:
@@ -59,6 +62,7 @@ services:
 
   mysql:
     image: mysql:8.0
+    container_name: MySQL
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: dawdb
@@ -70,6 +74,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: PHPmyAdmin
     ports:
       - "8080:80"
     environment:
