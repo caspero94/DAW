@@ -10,12 +10,6 @@ services:
       bash -c "
         # Eliminar antiguos elementos
         rm -rf /workspace/._recursos
-        
-        # Configurar git
-        if [ -f /home/vscode/.gitconfig ]; then
-          git config --global user.name \"$(git config --global user.name)\"
-          git config --global user.email \"$(git config --global user.email)\"
-        fi
 
         # Mantener el contenedor en ejecución
         sleep infinity
