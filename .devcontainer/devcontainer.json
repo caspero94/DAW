@@ -1,6 +1,6 @@
 {
-  "name": "DAW/DAM DEV",
-  "containerName": "DAW/DAM DEV",
+  "name": "DAW_DAM_DEV",
+  "containerName": "DAW_DAM_DEV",
   "secrets": {"VERSION":{"description": "0.2-Beta"}},
   "dockerComposeFile": "docker-compose.yml",
   "service": "java",
