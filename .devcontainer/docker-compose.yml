@@ -1,3 +1,4 @@
+name: DAW_DAM_DEV
 services:
   java:
     image: mcr.microsoft.com/vscode/devcontainers/java:11
