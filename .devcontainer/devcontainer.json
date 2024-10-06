@@ -1,7 +1,7 @@
 {
   "name": "DAW_DAM_DEV",
   "containerName": "DAW_DAM_DEV",
-  "secrets": {"VERSION":{"description": "0.2-Beta"}},
+  "secrets": {"VERSION":{"description": "0.2"}},
   "dockerComposeFile": "docker-compose.yml",
   "service": "java",
   "workspaceFolder": "/workspace",
