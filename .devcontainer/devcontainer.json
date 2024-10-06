@@ -1,21 +1,23 @@
 {
-    "name": "DAW/DAM DEV",
-    "secrets": {"VERSION":{"description": "0.2-Beta"}},
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "devcontainer",
-    "workspaceFolder": "/workspace",
-    "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
-    },
-    "extensions": [
-      "vscjava.vscode-java-pack",
-      "ms-python.python",
-      "felixfbecker.php-debug",
-      "bmewburn.vscode-intelephense-client",
-      "ms-azuretools.vscode-docker",
-      "esbenp.prettier-vscode",
-      "ms-vscode.live-server"
-    ],
-    "forwardPorts": [80, 3306, 8080],
-    "remoteUser": "root"
-  }
+  "name": "DAW/DAM DEV",
+  "containerName": "DAW/DAM DEV",
+  "secrets": {"VERSION":{"description": "0.2-Beta"}},
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "java",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "vscjava.vscode-java-pack",
+    "ms-python.python",
+    "felixfbecker.php-debug",
+    "bmewburn.vscode-intelephense-client",
+    "ms-azuretools.vscode-docker",
+    "esbenp.prettier-vscode",
+    "ms-vscode.live-server"
+  ],
+  "forwardPorts": [80, 3306, 8080],
+  "remoteUser": "root",
+  "shutdownAction": "stopCompose"
+}
