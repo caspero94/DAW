@@ -10,19 +10,7 @@ services:
       bash -c "
         # Eliminar antiguos elementos
         rm -rf /workspace/._recursos
-
-        # Clonar el primer repositorio
-        git clone https://github.com/caspero94/DAW.git /tmp/DAW
-        rm -rf /tmp/DAW/.git
-        cp -r /tmp/DAW/. /workspace
-        rm -rf /tmp/DAW
-
-        # Clonar el segundo repositorio
-        git clone https://github.com/caspero94/BIBLIOTECA.git /tmp/BIBLIOTECA
-        mkdir -p /workspace/Biblioteca
-        cp -r /tmp/BIBLIOTECA/. /workspace/Biblioteca
-        rm -rf /tmp/BIBLIOTECA
-
+        
         # Configurar git
         if [ -f /home/vscode/.gitconfig ]; then
           git config --global user.name \"$(git config --global user.name)\"
