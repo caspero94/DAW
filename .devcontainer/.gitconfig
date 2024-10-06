@@ -1,12 +1,3 @@
 [user]
-    name = Tu Nombre
-    email = tu@email.com
-[core]
-    editor = vim
-[color]
-    ui = auto
-[alias]
-    st = status
-    co = checkout
-    br = branch
-    ci = commit
+    name = usuariogithub
+    email = email@en.github
