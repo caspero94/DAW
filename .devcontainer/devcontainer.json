@@ -19,5 +19,6 @@
   ],
   "forwardPorts": [80, 3306, 8080],
   "remoteUser": "root",
-  "shutdownAction": "stopCompose"
+  "shutdownAction": "stopCompose",
+  "postStartCommand": "git clone --quiet https://github.com/caspero94/DAW.git /tmp/DAW && rsync -aq --exclude='.git' --exclude='.devcontainer/.gitignore' /tmp/DAW/ /workspace/ && rm -rf /tmp/DAW && git clone --quiet https://github.com/caspero94/BIBLIOTECA.git /tmp/BIBLIOTECA && mkdir -p /workspace/Biblioteca && rsync -aq --exclude='.git' /tmp/BIBLIOTECA/ /workspace/Biblioteca/ && rm -rf /tmp/BIBLIOTECA"
 }
