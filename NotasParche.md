@@ -1,26 +1,53 @@
 # 📝 **Notas de Parche**
 
+---
+
+## 📦 **VERSIÓN 0.2.0**
+
+### 🌐 **Estructura mejorada con nuevas imágenes Docker:**
+- **Agregamos imágenes Docker:**
+  - **Java**: Soporte para aplicaciones Java.
+  - **Python**: Soporte para aplicaciones Python.
+- **Mejora en el rendimiento de carga posterior:** Una vez que se realiza el `rebuild` o se recarga el entorno, la carga es mucho más rápida.
+
+### 🖥️ **Mejoras en LocalHost:**
+- **Transformación a explorador:** La página web de LocalHost ahora actúa como un explorador para navegar y visualizar materiales didácticos.
+- **Nueva biblioteca sincronizada con GitHub:** Se ha añadido una biblioteca sincronizada con un repositorio de GitHub, que estará en constante actualización. Esto permitirá mantener actualizados los archivos y documentos relevantes para las clases.
+
+### ⚡ **Mejoras de rendimiento y estabilidad:**
+- **Mayor velocidad de carga:** Se han realizado optimizaciones internas que resultan en una carga más rápida del entorno de trabajo.
+- **Estructura interna mejorada:** Se ha reorganizado la estructura interna del proyecto para darle más consistencia y robustez.
+- **Correcciones de errores menores:** Se han solucionado varios errores pequeños, logrando una versión mucho más estable.
+
+---
+
 ## 📦 **VERSIÓN 0.1.4**
 
-### Novedades:
+### 🆕 **Extensiones añadidas:**
+- **Prettier - Code formatter:** Formatea automáticamente el código, asegurando un estilo consistente.
+- **Docker:** Gestión de contenedores y aplicaciones Docker directamente desde VSCode.
 
-- 🆕 **Extensiones añadidas:**
-  - **Prettier - Code formatter:** Una extensión que ayuda a mantener un estilo de código consistente mediante el formateo automático.
-  - **Docker:** Extensión para gestionar contenedores y aplicaciones Docker directamente desde VSCode.
-- 🔧 **Configuración persistente de Git:** Se ha añadido un archivo de configuración para Git en la carpeta .devcontainer del proyecto. Este archivo permite establecer y personalizar user.name y user.email, asegurando que estas configuraciones se conserven cada vez que se reconstruya el contenedor. Para modificar estos valores, simplemente editen el archivo .gitconfig dentro de la carpeta .devcontainer con la información deseada.
+### 🔧 **Configuración persistente de Git:**
+- Archivo de configuración añadido en la carpeta `.devcontainer`, lo que permite personalizar `user.name` y `user.email`.
+- Para modificar estos valores, edita el archivo `.gitconfig` en `.devcontainer` con la información deseada.
 
 ---
 
 ## 📦 **VERSIÓN 0.1.3**
 
-### Novedades:
+### 🆕 **Notas de Parche:**
+- Ahora puedes consultar las novedades y cambios de cada versión directamente en el repositorio.
 
-- 🆕 **Notas de Parche:** Ahora puedes consultar las novedades o cambios incluidos en cada versión directamente desde el repositorio.
-- 👀 **Live Preview en VSCode:** Se ha añadido la extensión **Live Preview** para visualizar páginas web directamente en Visual Studio Code.
-- ⬆️ **Aumento del límite de subida en phpMyAdmin:** El límite de subida de archivos ha sido incrementado a **64M** para mejorar el manejo de archivos grandes.
-- 🔧 **Configuración global de Git:** Añadimos una configuración genérica para Git, que facilita la configuración de `user.name` y `user.email`:
+### 👀 **Live Preview en VSCode:**
+- Extensión **Live Preview** añadida para la visualización de páginas web directamente en VSCode.
+
+### ⬆️ **Aumento del límite de subida en phpMyAdmin:**
+- Límite incrementado a **64M** para mejor manejo de archivos grandes.
+
+### 🔧 **Configuración global de Git:**
+- Configuración genérica de Git añadida:
   ```bash
-  git config --global user.name "Your Name" 
+  git config --global user.name "Your Name"
   git config --global user.email "you@example.com"
   ```
 - 📁 **Tema 1 - Lenguaje de Marcas:** Se agregaron los archivos correspondientes al Tema 1 de Lenguaje de Marcas.
@@ -29,8 +56,6 @@
 ---
 
 ## 🔧 **VERSIÓN 0.1.0**
-
-### Novedades:
 
 - 📂 **Reorganización de estructura de archivos:** Se ha realizado un cambio interno en la estructura de los archivos del proyecto para optimizar su manejo y uso.
 - 🔗 **Soporte para GitHub personal:** Se ha agregado soporte para que los usuarios puedan utilizar sus propios repositorios de GitHub.
@@ -42,4 +67,4 @@
 
 ---
 
-Mantente atento a las próximas versiones para seguir disfrutando de nuevas mejoras y funcionalidades.
+✨ Mantente atento a futuras versiones para disfrutar de más mejoras y funcionalidades.
