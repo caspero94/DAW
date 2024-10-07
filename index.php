@@ -140,6 +140,12 @@ function searchFiles($query, $dir) {
             transition: background-color 0.3s, color 0.3s;
         }
         
+        h3 {
+            margin: 16px 0px 0px 0px;
+            text-align: center;
+            
+        }
+
         #headbar {
             display: flex;
             align-items: center;
@@ -366,18 +372,22 @@ function searchFiles($query, $dir) {
         }
         
         #favorites {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
             border-bottom: 1px solid var(--border-color);
         }
         
         .favorite {
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 5px;
             cursor: pointer;
             transition: background-color 0.2s, transform 0.2s;
             word-wrap: break-word;
+        }
+        #favorites-list {
+            padding: 10px;
+            margin: 0px;
         }
         
         .favorite:hover {
@@ -398,9 +408,9 @@ function searchFiles($query, $dir) {
         }
         
         #recent-files {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 0px;
+            padding-top: 0px;
+            border-top: 0px solid var(--border-color);
         }
         
         #recent-files-list {
@@ -514,7 +524,7 @@ function searchFiles($query, $dir) {
         <div id="sidebar">
             <a href="/" id="home-link"><span class="icon">🏠</span><span class="text">INICIO</span></a>
             <a href="http://localhost:8080" id="db-link" target="_blank"><span class="icon">🗄️</span><span class="text">BASE DE DATOS</span></a>
-            <a href="#" id="home-link" onclick="openTab({name: 'INSTRUCCIONES', path: 'README.md', type: 'file'}); return false;"><span class="icon">📖</span><span class="text">INSTRUCCIONES</span></a>
+            <a href="#" id="home-link" onclick="openTab({name: 'INFORMACIÓN', path: 'README.md', type: 'file'}); return false;"><span class="icon">📖</span><span class="text">INFORMACIÓN</span></a>
             <a href="#" id="home-link" onclick="openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'}); return false;"><span class="icon">📰</span><span class="text">NOVEDADES</span></a>
             <div id="toolbar">
                 <div id="search-container">
@@ -523,7 +533,7 @@ function searchFiles($query, $dir) {
                 </div>
             </div>
             <div id="favorites">
-                <h3>Favoritos</h3>
+                <h3>Favoritos</h3></center>
                 <ul id="favorites-list"></ul>
             </div>
             <div id="favorites">
@@ -814,7 +824,7 @@ function searchFiles($query, $dir) {
 
         // Abrir pestañas por defecto al cargar la página
         document.addEventListener('DOMContentLoaded', () => {
-            openTab({name: 'INSTRUCCIONES', path: 'README.md', type: 'file'});
+            openTab({name: 'INFORMACIÓN', path: 'README.md', type: 'file'});
             openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'});
         });
 
