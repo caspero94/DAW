@@ -52,6 +52,8 @@ services:
       MYSQL_PASSWORD: root
     volumes:
       - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
     networks:
       - devnetwork
 
