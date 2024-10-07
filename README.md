@@ -79,9 +79,49 @@ Sigue estos pasos para instalar y configurar el entorno de desarrollo:
 - [Documentación de Docker](https://docs.docker.com/)
 - [Documentación de Visual Studio Code](https://code.visualstudio.com/docs)
 
-## 📩 **Contacto**
+---
 
-Si tienes alguna duda o sugerencia sobre este repositorio, no dudes en contactar a:
+## 📈 **Cómo Contribuir**
 
-**Pedro Pereira**  
-Email: pedropereira.email@gmail.com
+¿Tienes contenido valioso que te gustaría agregar? ¡Tu colaboración es bienvenida! Sigue los siguientes pasos para contribuir:
+
+1. Haz un **fork** del repositorio.
+2. Crea una nueva rama para tu contribución:
+   ```bash
+   git checkout -b mi-contribucion
+   ```
+3. Realiza tus cambios y **haz commit**:
+   ```bash
+   git commit -m "Agregado nuevo contenido"
+   ```
+4. Envía un **pull request** y lo revisaremos pronto.
+
+---
+
+## 🎉 **Colaboradores**
+
+Agradecemos enormemente el esfuerzo de todos los que han contribuido a este proyecto. Cada aportación nos ayuda a mejorar y ampliar esta biblioteca de recursos.  
+
+**¡Gracias a todos los que han colaborado!**
+
+<!-- Aquí puedes agregar nombres de los colaboradores actuales -->
+- ✨ **Pedro Pereira Vaz** - *Creador y Mantenedor*  
+  [pedropereira.email@gmail.com](mailto:pedropereira.email@gmail.com)
+
+---
+
+## 🧑‍💻 **Contacto**
+
+Si tienes preguntas, sugerencias o deseas colaborar de otra forma, no dudes en contactarme:  
+📧 **Pedro Pereira Vaz** - [pedropereira.email@gmail.com](mailto:pedropereira.email@gmail.com)
+
+---
+
+## 📜 **Licencia**
+
+Este proyecto está bajo la licencia **MIT**. Puedes consultar más detalles en el archivo [LICENSE](./LICENSE).
+
+---
+
+![footer](https://via.placeholder.com/1200x100.png?text=Gracias+por+visitar+el+Entorno+de+Desarrollo+DAW+%26+DAM)
+
