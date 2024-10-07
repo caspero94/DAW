@@ -15,7 +15,8 @@
     "bmewburn.vscode-intelephense-client",
     "ms-azuretools.vscode-docker",
     "esbenp.prettier-vscode",
-    "ms-vscode.live-server"
+    "ms-vscode.live-server",
+    "tomoki1207.pdf"
   ],
   "forwardPorts": [80, 3306, 8080],
   "remoteUser": "root",
