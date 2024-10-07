@@ -30,7 +30,7 @@ Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
      ```
      por:
      ```yaml
-     - "3300:3306"
+     3300:3306
      ```
 
 2. **Descargar e instalar las siguientes herramientas:**
