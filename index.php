@@ -826,9 +826,9 @@ function searchFiles($query, $dir) {
 
         // Abrir pestañas por defecto al cargar la página
         document.addEventListener('DOMContentLoaded', () => {
-            openTab({name: 'INFORMACIÓN', path: 'README.md', type: 'file'});
-            openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'});
             openTab({name: 'BIBLIOTECA', path: 'Biblioteca/README.md', type: 'file'});
+            openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'});
+            openTab({name: 'INFORMACIÓN', path: 'README.md', type: 'file'});
         });
 
         // Mejorar la accesibilidad
