@@ -4,7 +4,7 @@
 function getDirectoryContents($dir) {
     $contents = [];
     $items = scandir($dir);
-    $omitFiles = $dir === '.' ? ['index.php', 'README.md', 'NotasParche.md'] : [];
+    $omitFiles = $dir === '.' ? ['index.php', 'README.md', 'NotasParche.md' ,'Biblioteca/README.md'] : [];
     foreach ($items as $item) {
         if ($item != "." && $item != ".." && $item[0] != "." && !in_array($item, $omitFiles)) {
             $path = $dir . DIRECTORY_SEPARATOR . $item;
@@ -526,7 +526,7 @@ function searchFiles($query, $dir) {
             <a href="http://localhost:8080" id="db-link" target="_blank"><span class="icon">🗄️</span><span class="text">BASE DE DATOS</span></a>
             <a href="#" id="home-link" onclick="openTab({name: 'INFORMACIÓN', path: 'README.md', type: 'file'}); return false;"><span class="icon">📖</span><span class="text">INFORMACIÓN</span></a>
             <a href="#" id="home-link" onclick="openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'}); return false;"><span class="icon">📰</span><span class="text">NOVEDADES</span></a>
-            <a href="#" id="home-link" onclick="openTab({name: 'BIBLIOTECA', path: 'Biblioteca/README.md', type: 'file'}); return false;"><span class="icon">📰</span><span class="text">BIBLIOTECA</span></a>
+            <a href="#" id="home-link" onclick="openTab({name: 'BIBLIOTECA', path: 'Biblioteca/README.md', type: 'file'}); return false;"><span class="icon">🗃️</span><span class="text">BIBLIOTECA</span></a>
             <a href="https://thoth-provides.netlify.app/calendario" id="db-link" target="content-frame"><span class="icon">🎞️</span><span class="text">CLASES GRABADAS</span></a>
             <div id="toolbar">
                 <div id="search-container">
@@ -828,6 +828,7 @@ function searchFiles($query, $dir) {
         document.addEventListener('DOMContentLoaded', () => {
             openTab({name: 'INFORMACIÓN', path: 'README.md', type: 'file'});
             openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'});
+            openTab({name: 'BIBLIOTECA', path: 'Biblioteca/README.md', type: 'file'});
         });
 
         // Mejorar la accesibilidad
