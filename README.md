@@ -1,5 +1,5 @@
 # Entorno de Desarrollo para grado superior de DAW/DAM
-![banner](https://via.placeholder.com/1200x300.png?text=Entorno+de+Desarrollo+DAW+%26+DAM)  
+![banner](https://via.placeholder.com/1200x200.png?text=Entorno+de+Desarrollo+DAW+%26+DAM)  
 
 Este repositorio proporciona un entorno de desarrollo completo para las clases de primer curso de Desarrollo de Aplicaciones Web (DAW) y Desarrollo de Aplicaciones Multiplataforma (DAM). Utiliza DevContainer y Docker Compose para garantizar un entorno estandarizado y fácil de desplegar.
 
