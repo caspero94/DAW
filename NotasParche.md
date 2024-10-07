@@ -1,4 +1,5 @@
 # 📝 **Notas de Parche**
+![banner](https://via.placeholder.com/600x100.png?text=Notas+de+Parche)  
 
 ---
 
