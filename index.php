@@ -4,8 +4,9 @@
 function getDirectoryContents($dir) {
     $contents = [];
     $items = scandir($dir);
+    $omitFiles = $dir === '.' ? ['index.php', 'README.md', 'NotasParche.md'] : [];
     foreach ($items as $item) {
-        if ($item != "." && $item != ".." && $item[0] != ".") {
+        if ($item != "." && $item != ".." && $item[0] != "." && !in_array($item, $omitFiles)) {
             $path = $dir . DIRECTORY_SEPARATOR . $item;
             $type = is_dir($path) ? 'directory' : 'file';
             $contents[] = [
@@ -24,7 +25,7 @@ function getFileContent($path) {
     
     switch (strtolower($extension)) {
         case 'md':
-            return parseMarkdown($content);
+            return $content; // Devolvemos el contenido sin procesar, lo procesaremos en el cliente
         case 'txt':
             return '<pre>' . htmlspecialchars($content) . '</pre>';
         case 'json':
@@ -34,29 +35,15 @@ function getFileContent($path) {
         case 'html':
         case 'php':
         case 'pdf':
-            return "<iframe src='$path' style='width:100%;height:90vh;border:none;'></iframe>";
+            return "<iframe src='$path' style='width:100%;height:98vh;border:none;'></iframe>";
         case 'jpg':
         case 'jpeg':
         case 'png':
         case 'gif':
-            return "<img src='$path' style='max-width:100%;max-height:90vh;object-fit:contain;' />";
+            return "<img src='$path' style='max-width:100%;max-height:98vh;object-fit:contain;' />";
         default:
             return "No se puede visualizar este tipo de archivo.";
     }
-}
-
-function parseMarkdown($content) {
-    // Parser básico de Markdown
-    $content = htmlspecialchars($content);
-    $content = preg_replace('/^# (.+)$/m', '<h1>$1</h1>', $content);
-    $content = preg_replace('/^## (.+)$/m', '<h2>$1</h2>', $content);
-    $content = preg_replace('/^### (.+)$/m', '<h3>$1</h3>', $content);
-    $content = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $content);
-    $content = preg_replace('/\*(.+?)\*/', '<em>$1</em>', $content);
-    $content = preg_replace('/`(.+?)`/', '<code>$1</code>', $content);
-    $content = preg_replace('/^\* (.+)$/m', '<li>$1</li>', $content);
-    $content = preg_replace('/(<li>.*<\/li>)/', '<ul>$1</ul>', $content);
-    return nl2br($content);
 }
 
 function formatJson($content) {
@@ -113,7 +100,8 @@ function searchFiles($query, $dir) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAW / DAM</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -121,8 +109,8 @@ function searchFiles($query, $dir) {
             --hover-color: #f0f0f0;
             --border-color: #e0e0e0;
             --sidebar-width: 30rem;
-            --sidebar-collapsed-width: 80px;
-            --accent-color: #4a90e2;
+            --sidebar-collapsed-width: 60px;
+            --accent-color: #e24a57;
             --secondary-color: #50e3c2;
             --headbar-height: 60px;
         }
@@ -132,7 +120,7 @@ function searchFiles($query, $dir) {
             --text-color: #ffffff;
             --hover-color: #2c2c2c;
             --border-color: #3c3c3c;
-            --accent-color: #6ab0ff;
+            --accent-color: #e24a57;
             --secondary-color: #50e3c2;
         }
         
@@ -158,7 +146,7 @@ function searchFiles($query, $dir) {
             height: var(--headbar-height);
             background-color: var(--bg-color);
             border-bottom: 1px solid var(--border-color);
-            padding: 0 40px;
+            padding: 0 10px;
         }
         
         #main-container {
@@ -199,7 +187,7 @@ function searchFiles($query, $dir) {
             display: flex;
             overflow-x: auto;
             background-color: var(--bg-color);
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 0px solid var(--border-color);
             flex-grow: 1;
         }
         
@@ -284,7 +272,7 @@ function searchFiles($query, $dir) {
             display: block;
         }
         
-        #mode-toggle, #sidebar-toggle, #copy-button {
+        #mode-toggle, #sidebar-toggle, #copy-button, #toggle-view-button {
             background: none;
             border: none;
             color: var(--text-color);
@@ -294,7 +282,7 @@ function searchFiles($query, $dir) {
             transition: color 0.2s, transform 0.2s;
         }
         
-        #mode-toggle:hover, #sidebar-toggle:hover, #copy-button:hover {
+        #mode-toggle:hover, #sidebar-toggle:hover, #copy-button:hover, #toggle-view-button:hover {
             color: var(--accent-color);
             transform: scale(1.1);
         }
@@ -497,6 +485,7 @@ function searchFiles($query, $dir) {
             font-weight: bold;
             color: var(--accent-color);
             margin-right: 20px;
+            padding-left: 20px;
         }
         
         #logo svg {
@@ -508,14 +497,15 @@ function searchFiles($query, $dir) {
 </head>
 <body>
     <div id="headbar">
+        <button id="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
         <div id="logo">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="45" fill="var(--accent-color)" />
-                <text x="50" y="70" font-size="60" text-anchor="middle" fill="white">🚀</text>
+                <text x="50" y="70" font-size="60" text-anchor="middle" fill="white">💻</text>
             </svg>
             DAW/DAM
         </div>
-        <button id="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+        
         <div id="tabs"></div>
         <button id="copy-button" style="display:none;" aria-label="Copy Content">📋</button>
         <button id="mode-toggle" aria-label="Toggle Dark Mode">🌓</button>
@@ -524,9 +514,11 @@ function searchFiles($query, $dir) {
         <div id="sidebar">
             <a href="/" id="home-link"><span class="icon">🏠</span><span class="text">INICIO</span></a>
             <a href="http://localhost:8080" id="db-link" target="_blank"><span class="icon">🗄️</span><span class="text">BASE DE DATOS</span></a>
+            <a href="#" id="home-link" onclick="openTab({name: 'INSTRUCCIONES', path: 'README.md', type: 'file'}); return false;"><span class="icon">📖</span><span class="text">INSTRUCCIONES</span></a>
+            <a href="#" id="home-link" onclick="openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'}); return false;"><span class="icon">📰</span><span class="text">NOVEDADES</span></a>
             <div id="toolbar">
                 <div id="search-container">
-                    <input type="text" id="search-bar" placeholder="Buscar archivos..." aria-label="Search files">
+                    <input type="text" id="search-bar" placeholder="   Buscar archivos..." aria-label="Search files">
                     <div id="search-results"></div>
                 </div>
             </div>
@@ -534,7 +526,10 @@ function searchFiles($query, $dir) {
                 <h3>Favoritos</h3>
                 <ul id="favorites-list"></ul>
             </div>
-            <ul id="file-tree" class="tree"></ul>
+            <div id="favorites">
+                <h3>Explorador</h3>
+                <ul id="file-tree" class="tree"></ul>
+            </div>
             <div id="recent-files">
                 <h3>Archivos recientes</h3>
                 <ul id="recent-files-list"></ul>
@@ -678,7 +673,11 @@ function searchFiles($query, $dir) {
             fetch(`?action=getFile&path=${encodeURIComponent(path)}`)
                 .then(response => response.json())
                 .then(data => {
-                    contentFrame.srcdoc = data.content;
+                    if (path.endsWith('.md')) {
+                        contentFrame.srcdoc = marked(data.content);
+                    } else {
+                        contentFrame.srcdoc = data.content;
+                    }
                     copyButton.style.display = 'block';
                 });
         }
@@ -813,41 +812,10 @@ function searchFiles($query, $dir) {
         renderFavorites();
         renderRecentFiles();
 
-        // Implementar arrastrar y soltar para reordenar pestañas
-        let dragTab = null;
-
-        tabs.addEventListener('dragstart', (e) => {
-            dragTab = e.target;
-            e.dataTransfer.setData('text/plain', '');
-        });
-
-        tabs.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            const targetTab = e.target.closest('.tab');
-            if (targetTab && targetTab !== dragTab) {
-                const rect = targetTab.getBoundingClientRect();
-                const midpoint = (rect.left + rect.right) / 2;
-                if (e.clientX < midpoint) {
-                    targetTab.parentNode.insertBefore(dragTab, targetTab);
-                } else {
-                    targetTab.parentNode.insertBefore(dragTab, targetTab.nextSibling);
-                }
-            }
-        });
-
-        tabs.addEventListener('dragend', () => {
-            dragTab = null;
-            openTabs = Array.from(tabs.children).map(tab => {
-                return openTabs.find(t => t.path === tab.dataset.path);
-            });
-        });
-
-        // Teclas de acceso rápido
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'b') {
-                e.preventDefault();
-                sidebar.classList.toggle('collapsed');
-            }
+        // Abrir pestañas por defecto al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            openTab({name: 'INSTRUCCIONES', path: 'README.md', type: 'file'});
+            openTab({name: 'NOVEDADES', path: 'NotasParche.md', type: 'file'});
         });
 
         // Mejorar la accesibilidad
