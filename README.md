@@ -26,7 +26,7 @@ Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
    - Si tienes MySQL o XAMPP instalados en tu equipo, debes desinstalarlos o detener manualmente el servicio para evitar conflictos en el puerto 3306.
    - Alternativamente, puedes modificar el puerto en el archivo `docker-compose.yml`. Cambia la línea:
      ```yaml
-     - "3306:3306"
+     3306:3306
      ```
      por:
      ```yaml
