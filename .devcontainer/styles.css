@@ -228,6 +228,17 @@ h3 {
     position: relative;
     overflow: hidden;
 }
+#classes-link{
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+    overflow: hidden;
+}
 
 #home-link::after, #db-link::after {
     content: '';
