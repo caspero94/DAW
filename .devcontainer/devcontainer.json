@@ -1,23 +1,23 @@
 {
   "name": "DAW_DAM_DEV",
-  "containerName": "DAW_DAM_DEV",
   "secrets": {"VERSION":{"description": "0.2"}},
   "dockerComposeFile": "docker-compose.yml",
   "service": "java",
   "workspaceFolder": "/workspace",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+  "customizations": {
+		"vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-python.python",
+        "felixfbecker.php-debug",
+        "bmewburn.vscode-intelephense-client",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode",
+        "ms-vscode.live-server",
+        "tomoki1207.pdf"
+      ]
+    }
   },
-  "extensions": [
-    "vscjava.vscode-java-pack",
-    "ms-python.python",
-    "felixfbecker.php-debug",
-    "bmewburn.vscode-intelephense-client",
-    "ms-azuretools.vscode-docker",
-    "esbenp.prettier-vscode",
-    "ms-vscode.live-server",
-    "tomoki1207.pdf"
-  ],
   "remoteUser": "root",
   "shutdownAction": "stopCompose",
   "postStartCommand": "git config --global user.name \"$(grep 'name =' /workspace/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\" && git config --global user.email \"$(grep 'email =' /workspace/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\" && git clone --quiet https://github.com/caspero94/DAW.git /tmp/DAW && rsync -aq --exclude='.git' --exclude='.devcontainer/.gitconfig' /tmp/DAW/ /workspace/ && rm -rf /tmp/DAW && git clone --quiet https://github.com/caspero94/BIBLIOTECA.git /tmp/BIBLIOTECA && mkdir -p /workspace/Biblioteca && rsync -aq --exclude='.git' /tmp/BIBLIOTECA/ /workspace/Biblioteca/ && rm -rf /tmp/BIBLIOTECA && rm -rf /workspace/NotasParche.md "
