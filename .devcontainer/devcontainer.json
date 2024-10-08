@@ -18,8 +18,7 @@
     "ms-vscode.live-server",
     "tomoki1207.pdf"
   ],
-  "forwardPorts": [80, 8080],
   "remoteUser": "root",
   "shutdownAction": "stopCompose",
-  "postStartCommand": "git config --global user.name \"$(grep 'name =' /workspace/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\" && git config --global user.email \"$(grep 'email =' /workspace/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\" && git clone --quiet https://github.com/caspero94/DAW.git /tmp/DAW && rsync -aq --exclude='.git' --exclude='.devcontainer/.gitconfig' /tmp/DAW/ /workspace/ && rm -rf /tmp/DAW && git clone --quiet https://github.com/caspero94/BIBLIOTECA.git /tmp/BIBLIOTECA && mkdir -p /workspace/Biblioteca && rsync -aq --exclude='.git' /tmp/BIBLIOTECA/ /workspace/Biblioteca/ && rm -rf /tmp/BIBLIOTECA"
+  "postStartCommand": "git config --global user.name \"$(grep 'name =' /workspace/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\" && git config --global user.email \"$(grep 'email =' /workspace/.devcontainer/.gitconfig | cut -d'=' -f2 | xargs)\" && git clone --quiet https://github.com/caspero94/DAW.git /tmp/DAW && rsync -aq --exclude='.git' --exclude='.devcontainer/.gitconfig' /tmp/DAW/ /workspace/ && rm -rf /tmp/DAW && git clone --quiet https://github.com/caspero94/BIBLIOTECA.git /tmp/BIBLIOTECA && mkdir -p /workspace/Biblioteca && rsync -aq --exclude='.git' /tmp/BIBLIOTECA/ /workspace/Biblioteca/ && rm -rf /tmp/BIBLIOTECA && rm -rf /workspace/NotasParche.md "
 }
