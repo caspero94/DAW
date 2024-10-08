@@ -52,7 +52,7 @@ if (isset($_GET['action'])) {
             <a href="/" id="home-link"><span class="icon">🏠</span><span class="text">INICIO</span></a>
             <a href="http://localhost:8080" id="db-link" target="_blank"><span class="icon">🗄️</span><span class="text">BASE DE DATOS</span></a>
             <a href="#" id="home-link" onclick="openTab({name: 'INFORMACIÓN', path: 'README.md', type: 'file'}); return false;"><span class="icon">📖</span><span class="text">INFORMACIÓN</span></a>
-            <a href="#" id="home-link" onclick="openTab({name: 'NOVEDADES', path:  'NotasParche.md', type: 'file'}); return false;"><span class="icon">📰</span><span class="text">NOVEDADES</span></a>
+            <a href="#" id="home-link" onclick="openTab({name: 'NOVEDADES', path:  '.devcontainer/NotasParche.md', type: 'file'}); return false;"><span class="icon">📰</span><span class="text">NOVEDADES</span></a>
             <a href="#" id="home-link" onclick="openTab({name: 'BIBLIOTECA', path: 'Biblioteca/README.md', type: 'file'}); return false;"><span class="icon">🗃️</span><span class="text">BIBLIOTECA</span></a>
             <a href="#" id="classes-link"><span class="icon">🎥</span><span class="text">CLASES GRABADAS</span></a>
             <div id="classes-submenu" class="submenu"></div>
