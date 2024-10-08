@@ -170,7 +170,7 @@ function fetchFileContent(path) {
 }
 
 function loadClassesSubmenu() {
-    fetch('historial_clase.json')
+    fetch('.devcontainer/historial_clase.json')
         .then(response => response.json())
         .then(data => {
             const submenu = document.getElementById('classes-submenu');
