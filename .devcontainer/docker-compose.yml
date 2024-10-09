@@ -53,7 +53,7 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3456:3306"
     networks:
       - devnetwork
 
