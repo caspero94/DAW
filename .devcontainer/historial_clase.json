@@ -3,81 +3,39 @@
       {
         "nombre": "Bases de Datos - Francisco Javier Segovia Bernardos",
         "clases": [
-          {
-            "nombre": "Tutoría - Introducción asignatura",
-            "fecha": "2024-09-25",
-            "link": "https://drive.google.com/file/d/159XGorGDzIBpiSVdkGMtZ4k8RLcdHR9p/view"
-          },
-          {
-            "nombre": "Clase - Unidad 1",
-            "fecha": "2024-09-30",
-            "link": "https://drive.google.com/file/d/1o_NuN6YD1c00ndKZymbJndEIXA6j9nyz/view"
-          },
-          {
-            "nombre": "Tutoría - Unidad 1",
-            "fecha": "2024-10-02",
-            "link": "https://drive.google.com/file/d/1V0zC84uVaWukbzLBnhqGUexZF9KO-URB/view"
-          },
-          {
-            "nombre": "Instalación MySQL",
-            "fecha": "2024-10-04",
-            "link": "https://drive.google.com/file/d/1jLBaYQbS23H1guGf3FnHLS5Bk3nxAS8r/view"
-          },
-          {
-            "nombre": "Clase - Unidad 1",
-            "fecha": "2024-10-07",
-            "link": "https://drive.google.com/file/d/1URXkdx-3IVy4ijlWLUMPKXO5l7eDwraA/view"
-          }
+          {"nombre": "Tutoría - Introducción asignatura", "fecha": "2024-09-25", "link": "https://drive.google.com/file/d/159XGorGDzIBpiSVdkGMtZ4k8RLcdHR9p/view"},
+          {"nombre": "Clase - Unidad 1", "fecha": "2024-09-30", "link": "https://drive.google.com/file/d/1o_NuN6YD1c00ndKZymbJndEIXA6j9nyz/view"},
+          {"nombre": "Tutoría - Unidad 1", "fecha": "2024-10-02", "link": "https://drive.google.com/file/d/1V0zC84uVaWukbzLBnhqGUexZF9KO-URB/view"},
+          {"nombre": "Instalación MySQL", "fecha": "2024-10-04", "link": "https://drive.google.com/file/d/1jLBaYQbS23H1guGf3FnHLS5Bk3nxAS8r/view"},
+          {"nombre": "Clase - Unidad 1", "fecha": "2024-10-07", "link": "https://drive.google.com/file/d/1URXkdx-3IVy4ijlWLUMPKXO5l7eDwraA/view"},
+          {"nombre": "Tutoría - Unidad 1", "fecha": "2024-10-09", "link": "https://drive.google.com/file/d/10xnI_3GSA0goC4Euzp08uClYO0DxKchY/view"}
+        ]
+      },
+      {
+        "nombre": "Entornos Desarrollo - Jose David Ventura Roldán",
+        "clases": [
+          {"nombre": "Clase", "fecha": "2024-09-30", "link": "https://www.youtube.com/embed/DoGfLm79Zkg"},
+          {"nombre": "Tutoría - Errores Xampp", "fecha": "2024-10-02", "link": "https://www.youtube.com/embed/msqwgvZujwQ"},
+          {"nombre": "Clase", "fecha": "2024-10-07", "link": "https://www.youtube.com/embed/LAVmRrwBYBM"},
+          {"nombre": "Tutoría", "fecha": "2024-10-09", "link": "https://www.youtube.com/embed/j2uPUKFsqm8"}
         ]
       },
       {
         "nombre": "Empleabilidad - Carlos Moreno Manzanaro García Calvillo",
         "clases": [
-          {
-            "nombre": "Tutoría - Unidad 1 - La salud Laboral y la prevención",
-            "fecha": "2024-09-27",
-            "link": "https://drive.google.com/file/d/1hsHj5mbwQshNNHjPuL9weXLW6aSYjJfy/view"
-          },
-          {
-            "nombre": "Clase - Unidad 1 - La salud Laboral y la prevención",
-            "fecha": "2024-09-30",
-            "link": "https://drive.google.com/file/d/1lMMGaySuOAH-fR7OxLcyRfSf_L8siriX/view"
-          },
-          {
-            "nombre": "Tutoría - Unidad 1 - Ejercicio práctico",
-            "fecha": "2024-10-04",
-            "link": "https://drive.google.com/file/d/1yaau2m9-B1m1tmJvDNf6rasfe4viRrMS/view"
-          },
-          {
-            "nombre": "Clase - Unidad 2 - Riesgos profesionales y prevención",
-            "fecha": "2024-10-07",
-            "link": "https://drive.google.com/file/d/17TYVFqNksftkf_HvdHCE0MpJO3E0Cape/view"
-          }
+          {"nombre": "Tutoría - Unidad 1 - La salud Laboral y la prevención", "fecha": "2024-09-27", "link": "https://drive.google.com/file/d/1hsHj5mbwQshNNHjPuL9weXLW6aSYjJfy/view"},
+          {"nombre": "Clase - Unidad 1 - La salud Laboral y la prevención", "fecha": "2024-09-30", "link": "https://drive.google.com/file/d/1lMMGaySuOAH-fR7OxLcyRfSf_L8siriX/view"},
+          {"nombre": "Tutoría - Unidad 1 - Ejercicio práctico", "fecha": "2024-10-04", "link": "https://drive.google.com/file/d/1yaau2m9-B1m1tmJvDNf6rasfe4viRrMS/view"},
+          {"nombre": "Clase - Unidad 2 - Riesgos profesionales y prevención", "fecha": "2024-10-07", "link": "https://drive.google.com/file/d/17TYVFqNksftkf_HvdHCE0MpJO3E0Cape/view"}
         ]
       },
       {
         "nombre": "Sistemas informáticos - Francisco Javier Segovia Bernardos",
         "clases": [
-          {
-            "nombre": "Clase - Introducción asignatura",
-            "fecha": "2024-09-26",
-            "link": "https://drive.google.com/file/d/1TtkhcQ5QRFtPUPWjqfSKsnXtf2pUNDud/view"
-          },
-          {
-            "nombre": "Tutoría - Introducción asignatura",
-            "fecha": "2024-09-27",
-            "link": "https://drive.google.com/file/d/1YPfTa7yLCeMuqPx-LSY89SLo5jucGaDd/view"
-          },
-          {
-            "nombre": "Clase - Unidad 1",
-            "fecha": "2024-10-02",
-            "link": "https://drive.google.com/file/d/1beWCr0pO1cJE8ke6WukMF6ZmDJe2Wgcu/view"
-          },
-          {
-            "nombre": "Tutoría - Unidad 1",
-            "fecha": "2024-10-04",
-            "link": "https://drive.google.com/file/d/1qPjWcBf-F8ww5lYSiJWXtRUPNrJvJn51/view"
-          }
+          {"nombre": "Clase - Introducción asignatura", "fecha": "2024-09-26", "link": "https://drive.google.com/file/d/1TtkhcQ5QRFtPUPWjqfSKsnXtf2pUNDud/view"},
+          {"nombre": "Tutoría - Introducción asignatura", "fecha": "2024-09-27", "link": "https://drive.google.com/file/d/1YPfTa7yLCeMuqPx-LSY89SLo5jucGaDd/view"},
+          {"nombre": "Clase - Unidad 1", "fecha": "2024-10-02", "link": "https://drive.google.com/file/d/1beWCr0pO1cJE8ke6WukMF6ZmDJe2Wgcu/view"},
+          {"nombre": "Tutoría - Unidad 1", "fecha": "2024-10-04", "link": "https://drive.google.com/file/d/1qPjWcBf-F8ww5lYSiJWXtRUPNrJvJn51/view"}
         ]
       }
     ]
