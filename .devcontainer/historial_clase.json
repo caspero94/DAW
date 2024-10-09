@@ -39,6 +39,13 @@
         ]
       },
       {
+        "nombre": "Fundamentos BBDD - Eugenio Rodriguez Velasco",
+        "clases": [
+          {"nombre": "Clase - Introducción", "fecha": "2024-09-24", "link": "https://drive.google.com/file/d/1YnuNZpgUTg8_Ok6fj2Sh0_6t5q4fE3pe/view"},
+          {"nombre": "Clase", "fecha": "2024-10-08", "link": "https://drive.google.com/file/d/1tIB33UXkdJnvyHNdOuIP92vgLDuyT2VT/view"},
+        ]
+      },
+      {
         "nombre": "Sistemas informáticos - Francisco Javier Segovia Bernardos",
         "clases": [
           {"nombre": "Clase - Introducción asignatura", "fecha": "2024-09-26", "link": "https://drive.google.com/file/d/1TtkhcQ5QRFtPUPWjqfSKsnXtf2pUNDud/view"},
