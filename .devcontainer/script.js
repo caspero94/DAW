@@ -155,6 +155,22 @@ function fetchFileContent(path) {
                 </body>
             </html>`;
         copyButton.style.display = 'none';
+    } else if (path.startsWith('https://www.youtube.com/') || path.startsWith('https://youtu.be/')) {
+        contentFrame.srcdoc = `
+            <html>
+                <head>
+                    <style>
+                        body { margin: 0; padding: 0; overflow: hidden; }
+                        iframe { border: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+                    </style>
+                </head>
+                <body>
+                    <iframe src="${path}" 
+                            width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </body>
+            </html>`;
+        copyButton.style.display = 'none';
     } else {
         fetch(`?action=getFile&path=${encodeURIComponent(path)}`)
             .then(response => response.json())
