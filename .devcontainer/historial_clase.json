@@ -30,6 +30,15 @@
         ]
       },
       {
+        "nombre": "Lenguajes Marcas - Jose David Ventura Roldán",
+        "clases": [
+          {"nombre": "Clase", "fecha": "2024-09-26", "link": "https://www.youtube.com/embed/v2ULfQ48dyI"},
+          {"nombre": "Tutoría", "fecha": "2024-09-26", "link": "https://www.youtube.com/embed/c9RAqJltX0I"},
+          {"nombre": "Clase", "fecha": "2024-10-03", "link": "https://www.youtube.com/embed/lr0iqP4g-uY"},
+          {"nombre": "Tutoría", "fecha": "2024-10-09", "link": "https://www.youtube.com/embed/Urrlg3uNu9k"}
+        ]
+      },
+      {
         "nombre": "Sistemas informáticos - Francisco Javier Segovia Bernardos",
         "clases": [
           {"nombre": "Clase - Introducción asignatura", "fecha": "2024-09-26", "link": "https://drive.google.com/file/d/1TtkhcQ5QRFtPUPWjqfSKsnXtf2pUNDud/view"},
