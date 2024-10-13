@@ -5,7 +5,6 @@ services:
     container_name: Java
     volumes:
       - ..:/workspace:cached
-      - ./.gitconfig:/home/vscode/.gitconfig:cached
     command: |
       bash -c "
         # Eliminar antiguos elementos
